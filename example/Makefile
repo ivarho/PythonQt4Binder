@@ -8,11 +8,12 @@ TARGET_GUI = GUI.py
 #TOOLCHAIN
 PYTHON = python
 PYUIC = pyuic4
+GUI_BINDER = ../GUIBinder.py
 
 all: $(TARGET_APP)
 
 $(TARGET_APP): $(TARGET_GUI)
-	$(PYTHON) GUIBinder.py -g $(TARGET_GUI) -a $(TARGET_APP)
+	$(PYTHON) $(GUI_BINDER) -g $(TARGET_GUI) -a $(TARGET_APP)
 
 $(TARGET_GUI): $(QT4_UI)
 	$(PYUIC) -x -o $(TARGET_GUI) $(QT4_UI)
