@@ -2,13 +2,13 @@
 
 #INPUT FILES
 QT4_UI = mygui.ui
-TARGET_APP = GUIApplication.py
+TARGET_APP = GUIApp.py
 TARGET_GUI = GUI.py
 
 #TOOLCHAIN
 PYTHON = python
 PYUIC = pyuic4
-GUI_BINDER = GUIBinder.py
+GUI_BINDER = ../GUIBinder.py
 
 all: $(TARGET_APP)
 
