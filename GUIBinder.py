@@ -3,6 +3,7 @@ import importlib
 import os
 import re
 import inspect
+import sys
 
 if __name__ == "__main__":
 	parser = OptionParser()
@@ -14,6 +15,12 @@ if __name__ == "__main__":
 
 	print("GUI file: %s" % options.guifile)
 	print("APP file: %s" % options.appfile)
+
+	current_path = os.path.dirname(os.path.abspath(options.appfile))
+
+	os.chdir(current_path)
+
+	sys.path.append(current_path)
 
 	appname = options.appfile.split('.')[0]
 
